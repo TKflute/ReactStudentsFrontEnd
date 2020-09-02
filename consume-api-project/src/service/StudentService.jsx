@@ -11,8 +11,8 @@ import axios from 'axios';
 // custom hook for performing get request
 export const useFetch = (searchMethod, searchValue) =>{
 
-    const getAll = "http://localhost:8080/api/students";
-    const getById = "http://localhost:8080/api/students/" + searchValue;
+    const getAll = "http://studentrestapi-env.eba-5kxkwmiq.us-east-2.elasticbeanstalk.com/api/students";
+    const getById = "http://studentrestapi-env.eba-5kxkwmiq.us-east-2.elasticbeanstalk.com/api/students/" + searchValue;
     let url = null;
 
     // allows us to use same hook for diff get requests/params
@@ -53,14 +53,14 @@ export const useFetch = (searchMethod, searchValue) =>{
 }
 
 export function deleteStudent(studentId){
-    return axios.delete('http://localhost:8080/api/delete/student/' + studentId);
+    return axios.delete('http://studentrestapi-env.eba-5kxkwmiq.us-east-2.elasticbeanstalk.com/api/delete/student/' + studentId);
 }
 
 // do not need JSON.stringify()
 export function createStudent(student){
-    return axios.post('http://localhost:8080/api/add/student', student);
+    return axios.post('http://studentrestapi-env.eba-5kxkwmiq.us-east-2.elasticbeanstalk.com/api/add/student', student);
 }
 
 export function updateStudent(student){
-    return axios.put('http://localhost:8080/update/student', student);
+    return axios.put('http://studentrestapi-env.eba-5kxkwmiq.us-east-2.elasticbeanstalk.com/api/update/student', student);
 }
